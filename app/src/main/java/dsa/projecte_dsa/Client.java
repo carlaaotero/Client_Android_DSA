@@ -8,14 +8,16 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 public interface Client {
 
+        //Un usuari es registra
         @POST("/registre")
-        Call<Void> registre(@Body Usuari register);
+        Call<Void> registre(@Body RegisterComp register);
+        //Un usuari inicia sessió
         @POST("/login")
         Call<Void> login(@Body LoginComp login);
-
         //Per auntenticar l'usuari
-        @GET("user")
+        @GET("/user")
         Call<Usuari> getUserDetails(@Header("Authorization") String credentials);
+        //Retorna una llista amb els objectes de la botiga
         @GET("/shop")
         Call<Void> botiga(@Body Camiseta camiseta);
 }

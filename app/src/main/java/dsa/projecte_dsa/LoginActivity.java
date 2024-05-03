@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                 //Redirigeix a l'usuari a l'activitat de registre
                 Intent intent = new Intent(LoginActivity.this, RegistreActivity.class);
 
-                Client.login(new dsa.projecte_dsa.Classes.LoginComp(username,password));
+                Client.login(new dsa.projecte_dsa.Classes.LoginComp(username,password)).
 
                 startActivity(intent);
 
