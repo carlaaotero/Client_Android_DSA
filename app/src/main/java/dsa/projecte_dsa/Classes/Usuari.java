@@ -1,5 +1,7 @@
 package dsa.projecte_dsa.Classes;
 
+import okhttp3.Credentials;
+
 public class Usuari {
 
     /*Llista d'atributs*/
@@ -18,6 +20,9 @@ public class Usuari {
         this.contra = contra;
     }
     /*Getters i setters*/
+    public String getUserDetails(){
+        return  Credentials.basic("ausername","apassword");
+    }
 
     public String getId() {
         return id;

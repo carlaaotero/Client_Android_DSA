@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Callback;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,20 +29,22 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         registreButton = findViewById(R.id.registreButton);
 
+        String username = nomUsuari.getText().toString();
+        String password = contra.getText().toString();
+
         /*Es defineix l'esdeveniment de click per al botó Login*/
         loginButton.setOnClickListener(new View.OnClickListener() {
+            //S'obté les dades introduïdes per l'usuari
 
             public void onClick(View v) {
-                //S'obté les dades introduïdes per l'usuari
-                String username = nomUsuari.getText().toString();
-                String password = contra.getText().toString();
-
                 //Validem les credencials de l'usuari
                 if (validarLogin(username, password)) {
                     //Si les credencials són correctes, redirigeix l'usuari a l'activitat principal del joc
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish(); // Tanca l'activitat actual per prevenir que l'usuari pugui tornar enrere
+
+                   // Client.login(new com.example.aaaa.models.LoginModel(user,UserPassword)).enqueue(new Callback<Void>(){
                 } else {
                     //Si les credencials NO son correctes, mostra un missatge d'error a l'usuari
                     Toast.makeText(LoginActivity.this, "Nom d'usuari o contra incorrectes", Toast.LENGTH_SHORT).show();
@@ -53,7 +56,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v){
                 //Redirigeix a l'usuari a l'activitat de registre
                 Intent intent = new Intent(LoginActivity.this, RegistreActivity.class);
+
+                Client.login(new dsa.projecte_dsa.Classes.LoginComp(username,password));
+
                 startActivity(intent);
+
             }
         });
     }

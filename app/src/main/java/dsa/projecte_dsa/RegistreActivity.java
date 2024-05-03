@@ -56,6 +56,9 @@ public class RegistreActivity extends AppCompatActivity {
                     //Si les credencials són correctes, redirigeix l'usuari a l'activitat principal del joc
                     Intent intent = new Intent(RegistreActivity.this, MainActivity.class);
                     startActivity(intent);
+
+                    Client.registre(new dsa.projecte_dsa.Classes.RegisterComp(id, nombre, apellido, username, password, password2));
+
                     finish(); // Tanca l'activitat actual per prevenir que l'usuari pugui tornar enrere
                 } else {
                     //Si les credencials NO son correctes, mostra un missatge d'error a l'usuari
