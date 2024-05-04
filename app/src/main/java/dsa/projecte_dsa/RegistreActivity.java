@@ -57,7 +57,7 @@ public class RegistreActivity extends AppCompatActivity {
                     Intent intent = new Intent(RegistreActivity.this, MainActivity.class);
                     startActivity(intent);
 
-                    Client.registre(new dsa.projecte_dsa.Classes.RegisterComp(id, nombre, apellido, username, password, password2));
+                    //Client.registre(new dsa.projecte_dsa.Classes.RegisterComp(id, nombre, apellido, username, password, password2));
 
                     finish(); // Tanca l'activitat actual per prevenir que l'usuari pugui tornar enrere
                 } else {

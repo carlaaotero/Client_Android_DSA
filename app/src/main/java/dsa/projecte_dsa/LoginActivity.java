@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish(); // Tanca l'activitat actual per prevenir que l'usuari pugui tornar enrere
 
-                   // Client.login(new com.example.aaaa.models.LoginModel(user,UserPassword)).enqueue(new Callback<Void>(){
+                    //Client.login(new dsa.projecte_dsa.Classes.LoginComp(nomUsuari,contra)).enqueue(new Callback<Void>();
                 } else {
                     //Si les credencials NO son correctes, mostra un missatge d'error a l'usuari
                     Toast.makeText(LoginActivity.this, "Nom d'usuari o contra incorrectes", Toast.LENGTH_SHORT).show();
@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                 //Redirigeix a l'usuari a l'activitat de registre
                 Intent intent = new Intent(LoginActivity.this, RegistreActivity.class);
 
-                Client.login(new dsa.projecte_dsa.Classes.LoginComp(username,password)).
+                //Client.login(new dsa.projecte_dsa.Classes.LoginComp(username,password)).
 
                 startActivity(intent);
 
