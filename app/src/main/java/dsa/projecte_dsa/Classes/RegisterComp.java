@@ -3,23 +3,20 @@ package dsa.projecte_dsa.Classes;
 import android.widget.EditText;
 
 public class RegisterComp {
-    String id;
     String nom;
     String cognom;
     String nomUsuari;
     String contra;
     String contra2;
 
-    public RegisterComp (String id, String nom, String cognom, String nomUsuari, String contra, String contra2){
-        this.id = id;
+    public RegisterComp (String nom, String cognom, String nomUsuari, String contra, String contra2){
         this.nom=nom;
         this.cognom = cognom;
         this.nomUsuari = nomUsuari;
         this.contra=contra;
         this.contra2 = contra2;
     }
-    public void setId(String id) {this.id = id;}
-    public String getId() {return id;}
+
     public void setNom(String nom) {this.nom = nom;}
     public String getNom() {return nom;}
     public void setContra(String contra) {this.contra = contra;}

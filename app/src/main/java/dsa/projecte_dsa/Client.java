@@ -19,5 +19,5 @@ public interface Client {
         Call<Usuari> getUserDetails(@Header("Authorization") String credentials);
         //Retorna una llista amb els objectes de la botiga
         @GET("/shop")
-        Call<Void> botiga(@Body Camiseta camiseta);
+        Call<Void> botiga(@Body Botiga camiseta);
 }

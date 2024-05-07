@@ -46,6 +46,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation("com.squareup.retrofit2:retrofit:2.1.0")
     implementation("com.squareup.retrofit2:converter-gson:2.1.0")
+    implementation ("com.squareup.picasso:picasso:2.71828") // Per fer servir Picasso per les imatges de la Botiga
 // Junit
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.0.0")
     //testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0")
