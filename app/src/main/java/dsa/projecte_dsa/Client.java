@@ -13,7 +13,7 @@ public interface Client {
         Call<Void> registre(@Body RegisterComp register);
         //Un usuari inicia sessió
         @POST("/login")
-        Call<Void> login(@Body LoginComp login);
+        Call<LoginComp> login(@Body LoginComp login);
         //Per auntenticar l'usuari
         @GET("/user")
         Call<Usuari> getUserDetails(@Header("Authorization") String credentials);
