@@ -10,7 +10,7 @@ public interface Client {
 
         //Un usuari es registra
         @POST("/registre")
-        Call<Void> registre(@Body RegisterComp register);
+        Call<RegisterComp> registre(@Body RegisterComp register);
         //Un usuari inicia sessió
         @POST("/login")
         Call<LoginComp> login(@Body LoginComp login);

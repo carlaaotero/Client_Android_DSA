@@ -2,6 +2,7 @@ package dsa.projecte_dsa;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +12,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
+
+import dsa.projecte_dsa.Classes.LoginComp;
+import dsa.projecte_dsa.Classes.RegisterComp;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RegistreActivity extends AppCompatActivity {
 
@@ -22,6 +29,7 @@ public class RegistreActivity extends AppCompatActivity {
     private EditText contra;
     private EditText contra2;
     private Button registre;
+    Client client;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,16 +48,28 @@ public class RegistreActivity extends AppCompatActivity {
 
         registre = findViewById(R.id.registre);
 
-        /*Es defineix l'esdeveniment de click per al botó Registre*/
+        String nombre = nom.getText().toString();
+        String apellido = cognom.getText().toString();
+        String username = nomUsuari.getText().toString();
+        String password = contra.getText().toString();
+        String password2 = contra2.getText().toString();
+
+        RegisterComp registerComp = new RegisterComp(nombre, apellido, username, password, password2);
+        Callback<RegisterComp> tCallback = new Callback<RegisterComp>() {
+            @Override
+            public void onResponse(Call<RegisterComp> call, Response<RegisterComp> response) {
+                Log.d("PROVA", "TINC RESPOSTA");
+            }
+
+            @Override
+            public void onFailure(Call<RegisterComp> call, Throwable t) {
+                Log.d("PROVA", "TINC UN ERROR");
+            }
+        };
+        client.registre(registerComp).enqueue(tCallback);
         registre.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                //S'obté les dades introduïdes per l'usuari
-                String nombre = nom.getText().toString();
-                String apellido = cognom.getText().toString();
-                String username = nomUsuari.getText().toString();
-                String password = contra.getText().toString();
-                String password2 = contra2.getText().toString();
 
                 //Validem les credencials de l'usuari
                 if (validarRegistre(id, nombre, apellido, username, password, password2)) {
@@ -67,10 +87,14 @@ public class RegistreActivity extends AppCompatActivity {
             }
         });
     }
+    /*Es defineix l'esdeveniment de click per al botó Registre*/
+
     /*Mètode per validar les credencials de l'usuari*/
     private boolean validarRegistre(String id, String nom, String cognom, String nomUsuari, String contra, String contra2){
         //FALTA FER API
 
         return true;
     }
+
+
 }

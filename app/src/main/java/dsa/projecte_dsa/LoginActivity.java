@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //Assignació de les referències als elements de la interfície/
-                nomUsuari = findViewById(R.id.nomUsuari);
+        nomUsuari = findViewById(R.id.nomUsuari);
         contra = findViewById(R.id.contra);
         loginButton = findViewById(R.id.loginButton);
         registreButton = findViewById(R.id.registreButton);
@@ -59,75 +59,54 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
         client.login(loginComp).enqueue(tCallback);
+
     }
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_login);
-//
-//        /Assignació de les referències als elements de la interfície/
-//        nomUsuari = findViewById(R.id.nomUsuari);
-//        contra = findViewById(R.id.contra);
-//        loginButton = findViewById(R.id.loginButton);
-//        registreButton = findViewById(R.id.registreButton);
-//
-//        String username = nomUsuari.getText().toString();
-//        String password = contra.getText().toString();
-//
-//
-//        /Es defineix l'esdeveniment de click per al botó Login/
-//        loginButton.setOnClickListener(new View.OnClickListener() {
-//            LoginComp loginComp = new LoginComp(username, password);
-//            client.login(new dsa.projecte_dsa.Classes.LoginComp(username, password)).enqueue(new Callback<LoginComp>() {
-//                @Override
-//                    public int onResponse(Call<LoginComp> call, Response<LoginComp> response) {
-//                        if (response.isSuccessful()) {
-//                            return 200;
-//                        }
-//                        else {
-//                            return 400;
-//                        }
-//                    }
-//                }
-//            //S'obté  les dades introduïdes per l'usuari
-//                @Override
-//                public void onClick(View v) {
-//
-//                    //Validem les credencials de l'usuari
-//                    if (validarLogin(username, password)) {
-//                        //Si les credencials són correctes, redirigeix l'usuari a l'activitat principal del joc
-//                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                        startActivity(intent);
-//                        finish(); // Tanca l'activitat actual per prevenir que l'usuari pugui tornar enrere
-//
-//                        //Client.login(new dsa.projecte_dsa.Classes.LoginComp(nomUsuari,contra)).enqueue(new Callback<Void>();
-//                    }
-//                    else {
-//                        //Si les credencials NO son correctes, mostra un missatge d'error a l'usuari
-//                        Toast.makeText(LoginActivity.this, "Nom d'usuari o contra incorrectes", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            }
-//            /Es defineix l'esdeveniment de click per al botó Registre/
-//            registreButton.setOnClickListener(new View.OnClickListener(){
-//                public void onClick(View v){
-//                    //Redirigeix a l'usuari a l'activitat de registre
-//                    Intent intent = new Intent(LoginActivity.this, RegistreActivity.class);
-//
-//                    //Client.login(new dsa.projecte_dsa.Classes.LoginComp(username,password)).
-//
-//                    startActivity(intent);
-//                }
-//            }
-//
-//            /Mètode per validar les credencials de l'usuari/
-//            private boolean validarLogin(String nomUsuari, String contra){
-//                //FALTA FER API
-//
-//                return true;
-//            }
-//        });
-//    }
+/*
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+
+        /Es defineix l'esdeveniment de click per al botó Login/
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            //S'obté  les dades introduïdes per l'usuari
+                @Override
+                public void onClick(View v) {
+
+                    //Validem les credencials de l'usuari
+                    if (validarLogin(username, password)) {
+                        //Si les credencials són correctes, redirigeix l'usuari a l'activitat principal del joc
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish(); // Tanca l'activitat actual per prevenir que l'usuari pugui tornar enrere
+
+                        //Client.login(new dsa.projecte_dsa.Classes.LoginComp(nomUsuari,contra)).enqueue(new Callback<Void>();
+                    }
+                    else {
+                        //Si les credencials NO son correctes, mostra un missatge d'error a l'usuari
+                        Toast.makeText(LoginActivity.this, "Nom d'usuari o contra incorrectes", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            /Es defineix l'esdeveniment de click per al botó Registre/
+            registreButton.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    //Redirigeix a l'usuari a l'activitat de registre
+                    Intent intent = new Intent(LoginActivity.this, RegistreActivity.class);//
+                    startActivity(intent);
+                }
+            }
+
+            /Mètode per validar les credencials de l'usuari/
+            private boolean validarLogin(String nomUsuari, String contra){
+                //FALTA FER API
+
+                return true;
+            }
+        });
+    }
+*/
 }
 
